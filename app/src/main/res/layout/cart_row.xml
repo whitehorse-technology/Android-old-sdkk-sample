@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="cartItem"
+            type="com.dengage.android.kotlin.nawaz.model.CartItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <ImageView
+            android:id="@+id/productImageView"
+            android:layout_width="75dp"
+            android:layout_height="96dp"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars"
+            android:productImage="@{cartItem.product.imageUrl}"
+            />
+
+        <TextView
+            android:id="@+id/productNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintStart_toEndOf="@+id/productImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="iMac 21"
+            android:text="@{cartItem.product.name}" />
+
+        <TextView
+            android:id="@+id/quantityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Qty"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintStart_toStartOf="@id/productNameTV"
+            app:layout_constraintTop_toBottomOf="@id/productNameTV" />
+
+        <Spinner
+            android:id="@+id/quantitySpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/quantity_string_array"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/quantityTextView"
+            app:layout_constraintStart_toEndOf="@+id/quantityTextView"
+            app:layout_constraintTop_toTopOf="@+id/quantityTextView"
+            android:setSpinnerValue="@{cartItem.quantity}"
+            />
+
+        <ImageButton
+            android:id="@+id/deleteProductButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"
+            android:src="@drawable/ic_delete_24"
+            app:layout_constraintBottom_toBottomOf="@+id/productTotalPriceTV"
+            app:layout_constraintEnd_toStartOf="@id/productTotalPriceTV"
+            app:layout_constraintTop_toTopOf="@+id/productTotalPriceTV" />
+
+        <TextView
+            android:id="@+id/productTotalPriceTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:padding="8dp"
+            android:text="@{String.valueOf(cartItem.product.price * cartItem.quantity)}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintBottom_toBottomOf="@+id/productImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/productImageView"
+            tools:text="1299.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

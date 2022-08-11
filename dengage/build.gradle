@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.huawei.agconnect'
+
+android {
+    compileSdkVersion 32
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 32
+        versionCode 1
+        versionName "4.3.4"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //applicationId "com.dengage.sdk"
+    }
+
+
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    api 'androidx.appcompat:appcompat:1.4.0'
+    api 'androidx.cardview:cardview:1.0.0'
+    api 'androidx.constraintlayout:constraintlayout:2.1.2'
+
+    // test dependencies
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.google.android.gms:play-services-base:17.6.0'
+    implementation 'com.google.firebase:firebase-core:20.0.0'
+    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+    // huawei
+     implementation 'com.huawei.hms:push:6.3.0.304'
+    implementation 'com.huawei.hms:ads-identifier:3.4.30.307'
+    implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
+    
+    implementation 'com.google.code.gson:gson:2.9.0'
+}
+
+repositories {
+    mavenCentral()
+}

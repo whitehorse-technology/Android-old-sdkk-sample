@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "223860307613",
+    "project_id": "nawaz-kotlin-sample",
+    "storage_bucket": "nawaz-kotlin-sample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223860307613:android:f27c1e0845ffaa80c48674",
+        "android_client_info": {
+          "package_name": "com.dengage.android.kotlin.nawaz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223860307613-r85llfg9h5s19vei8221vd0de16lrlfj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBANNXH_D04lCVmAa9s4utFcBWPSpI-Qzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223860307613-r85llfg9h5s19vei8221vd0de16lrlfj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

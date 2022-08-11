@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.dengage.android.kotlin.nawaz.model.Product" />
+
+        <variable
+            name="shopInterface"
+            type="com.dengage.android.kotlin.nawaz.adapters.ShopListAdapter.ShopInterface" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{() -> shopInterface.onItemClick(product)}"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/productImageView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:productImage="@{product.imageUrl}"
+            android:scaleType="fitCenter"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/productNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{product.name}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            tools:text="iPhone 11" />
+
+        <TextView
+            android:id="@+id/priceTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{String.valueOf(product.price)+ ` $`}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            tools:text="649 $" />
+
+        <TextView
+            android:id="@+id/availableTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{product.available ? `Available` : `Out of Stock`}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="@{product.available ? @color/colorPrimaryDark : @color/red}"
+            tools:text="Available" />
+
+        <Button
+            android:id="@+id/addToCartBtn"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:enabled="@{product.available}"
+            android:onClick="@{() -> shopInterface.addItem(product)}"
+            android:text="Add to cart"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+
+            />
+
+        <Button
+            android:id="@+id/addToWishList"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="@{() -> shopInterface.addItemToWishList(product)}"
+            android:text="Add to wishlist"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+
+            />
+
+    </LinearLayout>
+</layout>
