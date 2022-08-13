@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.navigation.fragment.findNavController
 import com.dengage.android.kotlin.nawaz.R
 import com.dengage.android.kotlin.nawaz.databinding.FragmentHomeBinding
+import com.dengage.android.kotlin.nawaz.ui.activity.GeoFenceActivity
 import com.dengage.android.kotlin.nawaz.ui.activity.InAppTestActivity1
 import com.dengage.android.kotlin.nawaz.ui.base.BaseDataBindingFragment
 import com.dengage.android.kotlin.nawaz.views.activity.MainActivityEcm
@@ -51,6 +52,10 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding>() {
 
         binding.btnInAppNav.setOnClickListener {
             startActivity(Intent(activity, InAppTestActivity1::class.java))
+        }
+
+        binding.geofence.setOnClickListener {
+            startActivity(Intent(activity, GeoFenceActivity::class.java))
         }
         /* binding.btnRating.setOnClickListener {
              DengageManager.showInAppRating(this.activity)

@@ -24,6 +24,10 @@
     <string name="button_rating">Show Rating View</string>
     <string name="button_ecomm">Ecommerce Module</string>
     <string name="button_inAppNavigationTest">In App Navigation Test</string>
+    <string name="button_geoFenceModule">Geofence Module</string>
+    <string name="button_request_location_permission">Request Location Permission</string>
+    <string name="button_stop_geofencing">Stop Geofencing</string>
+    <string name="button_geofence">Geofence</string>
     <string name="table_name">Table Name</string>
     <string name="button_send">Send</string>
     <string name="button_device_event_send">Send Device Event</string>
