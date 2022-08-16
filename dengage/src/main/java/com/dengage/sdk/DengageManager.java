@@ -143,7 +143,7 @@ public class DengageManager {
     }
 
 
-    public DengageManager isGeofenceEnabled(boolean isEnabled) {
+    public DengageManager setGeofenceStatus(boolean isEnabled) {
         logger.Verbose("Geofence method is called");
         try {
             com.dengage.sdk.data.cache.Prefs.INSTANCE.setGeofenceEnabled(isEnabled);

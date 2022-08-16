@@ -27,7 +27,7 @@ class App : Application() {
             .setLogStatus(true)
             .setFirebaseIntegrationKey(Constants.FIREBASE_APP_INTEGRATION_KEY)
             .setHuaweiIntegrationKey("r5cz2AnQUT_s_l_l61BLIEDBXHLkMy2qLb4XU2XFOzsJq_p_l_0hr5dKK0BCOHCOmwPwBdDfVYu5rWl33W_p_l_MVKn3PjzCXZnYN7OiSLTKSQn3kvxvkz0nkVlbX4zkdLiN3iRJPvQOcWIRBSRGui6KOvbMn9t8DQ_e_q__e_q_")
-            .isGeofenceEnabled(true)
+            .setGeofenceStatus(true)
             .init()
 
         // should be initiated once in application runtime
