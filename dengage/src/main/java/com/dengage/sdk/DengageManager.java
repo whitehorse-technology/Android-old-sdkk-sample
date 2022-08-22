@@ -1111,11 +1111,11 @@ public class DengageManager {
     }
 
     public void startGeofence() {
-           geofenceManager.startTracking();
+        geofenceManager.startTracking();
     }
 
     public void handleLocation(Context context, Location location, GeofenceLocationSource source, String geofenceRequestId) {
-           geofenceManager.handleLocation(location, source, geofenceRequestId);
+        geofenceManager.handleLocation(location, source, geofenceRequestId);
     }
 
     public void handleBootCompleted(Context context) {
@@ -1134,6 +1134,24 @@ public class DengageManager {
     void initalizeGeofenceObject() {
         geofenceManager = new GeofenceLocationManager();
     }
+
+
+    public void handleIncomingIntent(Intent intent) {
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                if (intent != null && intent.getExtras() != null && intent.getAction() != null) {
+                    if (intent.getAction().equals(Constants.PUSH_OPEN_EVENT)) {
+                        sendOpenEvent("", "", new Message(intent.getExtras()));
+                    }
+
+                }
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
 

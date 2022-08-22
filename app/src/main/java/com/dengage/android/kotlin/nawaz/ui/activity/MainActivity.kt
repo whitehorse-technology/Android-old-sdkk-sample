@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import com.dengage.android.kotlin.nawaz.R
 import com.dengage.android.kotlin.nawaz.ui.base.BaseActivity
+import com.dengage.sdk.DengageManager
 
 
 class MainActivity : BaseActivity() {
@@ -18,8 +19,8 @@ class MainActivity : BaseActivity() {
         tvName = findViewById(R.id.textView)
         tvName.text = javaClass.name
 
-        Log.d("oops","$intent");
-
+        Log.d("oops", "$intent");
+        DengageManager.getInstance(context).handleIncomingIntent(intent)
         val bundle = intent.extras
         if (bundle != null) {
             for (key in bundle.keySet()) {
